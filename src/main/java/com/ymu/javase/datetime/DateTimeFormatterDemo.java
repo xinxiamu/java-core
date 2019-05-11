@@ -21,5 +21,10 @@ public class DateTimeFormatterDemo {
 		DateTimeFormatter formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM);
 		String formatStr = formatter.format(zonedDateTime);
 		System.out.println(formatStr);
+		
+		//自定义格式
+		DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
+		String str = formatter2.format(zonedDateTime);
+		System.out.println(str);
 	}
 }

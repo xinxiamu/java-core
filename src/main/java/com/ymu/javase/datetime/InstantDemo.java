@@ -5,6 +5,7 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
+import java.util.Date;
 
 /**
  * 时间线
@@ -51,6 +52,12 @@ public class InstantDemo {
 		LocalDateTime ldt = LocalDateTime.ofInstant(Instant.now(), ZoneId.systemDefault());
 		System.out.printf("%s %d %d at %d:%d%n", ldt.getMonth(), ldt.getDayOfMonth(),
 		                  ldt.getYear(), ldt.getHour(), ldt.getMinute());
+		
+		//预留代码互操作 java.util.Date  java.sql.Date,都转成Instant
+		Date uDate = new Date();
+		Instant instant1 = uDate.toInstant();
+		java.sql.Date sqlDate = new java.sql.Date(12653564568l);
+		sqlDate.toInstant();
 	}
 	
 	private static void diff() {

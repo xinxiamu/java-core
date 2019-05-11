@@ -1,6 +1,8 @@
 package com.ymu.javase.datetime;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjuster;
 
@@ -30,5 +32,11 @@ public class LocalDateDemo {
 		LocalDate l1 = LocalDate.now();
 		long diffDay = localDate.until(l1, ChronoUnit.DAYS);//天为表示单位，可以以其他的表示
 		System.out.println(diffDay);
+		
+		//解析日期：
+		LocalDate ldt = LocalDate.parse("2007/12/03",DateTimeFormatter.ofPattern("yyyy/MM/dd")); 
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String s = formatter.format(ldt);
+		System.out.println(s);
 	}
 }

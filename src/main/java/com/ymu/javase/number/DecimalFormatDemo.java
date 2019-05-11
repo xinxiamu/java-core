@@ -3,7 +3,7 @@ package com.ymu.javase.number;
 import java.text.DecimalFormat;
 
 /**
- * ¸ñÊ½»¯Êı×Ö
+ *  æ•°å­—æ ¼å¼åŒ–ã€‚
  * @author mumu
  *
  */

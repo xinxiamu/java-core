@@ -8,7 +8,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 /**
- * 时间线
+ * 时间线，代表的是时间戳
  * <p>
  * 地球自转一周24小时，24*60*60=86400秒。
  * 原点：1970年1月1日午夜，从午夜开始计算。

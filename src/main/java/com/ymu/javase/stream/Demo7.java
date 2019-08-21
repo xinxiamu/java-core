@@ -1,17 +1,7 @@
 package com.ymu.javase.stream;
 
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.IntSummaryStatistics;
-import java.util.List;
 import java.util.Locale;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import sun.awt.www.content.audio.x_aiff;
 
 /**
  * 分组和分片。

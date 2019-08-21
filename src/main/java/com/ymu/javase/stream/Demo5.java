@@ -1,16 +1,6 @@
 package com.ymu.javase.stream;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.IntSummaryStatistics;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import sun.awt.www.content.audio.x_aiff;
 
 /**
  * 收集结果。处理完流后，查看流中的每个元素。

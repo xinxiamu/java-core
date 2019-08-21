@@ -1,10 +1,14 @@
 package com.ymu.javase.datetime;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.TextStyle;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjuster;
+import java.time.temporal.WeekFields;
+import java.util.*;
 
 import org.junit.Test;
 
@@ -60,10 +64,49 @@ public class LocalDateDemo {
 	@Test
 	public void test2() {
 		LocalDate pubD = LocalDate.of(2019, 05, 22);
-		int dw = pubD.getDayOfWeek().getValue();
+		int dw = pubD.getDayOfWeek().getValue(); //本周的星期几
 		System.out.println(dw); 
 		LocalDate enDate = pubD.plusDays(7 - dw).plusWeeks(2);
 		System.out.println(enDate);
 		System.out.println(pubD.plusWeeks(2).toString()); 
+	}
+
+	@Test
+	public void  test3() {
+		LocalDate nowDate = LocalDate.now();
+		System.out.println(">>>当前日期：" + nowDate.toString() + "====" + nowDate.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.getDefault()));
+
+		//nowDate是一年中的第几周
+		System.out.println(">>>一年的第几周：" + nowDate.get(WeekFields.of(DayOfWeek.MONDAY,1).weekOfYear()));
+
+		System.out.println(">>>当周的第几天：" + nowDate.get(WeekFields.of(DayOfWeek.MONDAY,1).dayOfWeek()));
+
+		//nowDate所在周的星期一
+		LocalDate newDate = nowDate.plusDays(-(nowDate.getDayOfWeek().getValue()) + 1);
+		System.out.println(">>>日期：" + newDate.toString() + "====" + newDate.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.getDefault()));
+
+		//当天所在周周一开始，后推四周27天，到第四周星期天
+		LocalDate end4 = newDate.plusDays(28 - 1);
+		System.out.println(">>>>第四周最后一天：" + end4.toString() + "===" + end4.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.getDefault()));
+
+		List<String> week4 = new ArrayList<>();
+		int weekNum = 5;
+		for (int i = 0; i < weekNum * 7; i++) {
+			LocalDate nextDate = newDate.plusDays(i); //从0开始，0就是当天
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+			String dateStr = formatter.format(nextDate);
+			week4.add(dateStr);
+		}
+		week4.stream().forEach(System.out::println);
+	}
+
+	@Test
+	public void test4() {
+		LocalDate nowDate = LocalDate.now();
+		System.out.println(">>>当前日期：" + nowDate.toString() + "====" + nowDate.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.getDefault()));
+
+		//后推三个月
+		LocalDate d5 = nowDate.plusMonths(3);
+		System.out.println(d5.toString());
 	}
 }

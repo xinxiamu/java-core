@@ -1,15 +1,9 @@
 package com.ymu.javase.datetime;
 
-import java.time.Duration;
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
-import java.time.temporal.ChronoField;
-import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalField;
-import java.time.temporal.TemporalUnit;
+import java.time.temporal.*;
 
 import javax.swing.text.html.parser.Entity;
 
@@ -18,7 +12,7 @@ public final class DateTimeUtils {
 	private DateTimeUtils() {
 	}
 
-	public static enum FormaterStyle {
+	public static enum FormatterStyle {
 		N1("yyyy-MM-dd"), 
 		N2("yyyy-MM-dd HH:mm"),
 		N3("yyyy-MM-dd HH:mm:ss"),
@@ -27,14 +21,50 @@ public final class DateTimeUtils {
 		M3("yyyy/MM/dd HH:mm:ss");
 		
 		private final String value;
-		
-		FormaterStyle(String value) {
+
+		FormatterStyle(String value) {
 			this.value = value;
 		}
 
 		public String getValue() {
 			return value;
 		}
+	}
+
+	/**
+	 * 返回date所在周的星期一时间对象。
+	 * @param date 如果date为null，则代表当前日期。
+	 * @return
+	 */
+	public static LocalDate getFirstDayOfWeek(LocalDate date) {
+		if (date == null) {
+			date = LocalDate.now();
+		}
+		LocalDate firstDayOfWeek = date.plusDays(-(date.getDayOfWeek().getValue()) + 1);
+		return firstDayOfWeek;
+	}
+
+	/**
+	 * 获取日期是一年中的第几周。
+	 * @param localDate
+	 * @return
+	 */
+	public static int getWeekOfYear(LocalDate localDate) {
+		WeekFields weekFields = WeekFields.of(DayOfWeek.MONDAY,1);
+		int weekOfYear = localDate.get(weekFields.weekOfYear());
+		return weekOfYear;
+	}
+
+	/**
+	 * 日期字符串转日期对象。
+	 * @param dateStr 日期字符串格式：2019-08-15或者2018/08/15
+	 * @param formatterStyle 格式化格式，必须和dateStr的一致。
+	 * @return
+	 */
+	public static LocalDate strToLocalDate(String dateStr, FormatterStyle formatterStyle) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(formatterStyle.getValue());
+		LocalDate ldt = LocalDate.parse(dateStr, formatter);
+		return ldt;
 	}
 
 	/**
@@ -50,16 +80,21 @@ public final class DateTimeUtils {
 
 	/**
 	 * 获取当前系统时间。并按给定格式返回。
-	 * @param formaterStyle 格式化对象。
+	 * @param formatterStyle 格式化对象。
 	 * @return 格式化的系统时间。
 	 */
-	public static String now(FormaterStyle formaterStyle) {
+	public static String now(FormatterStyle formatterStyle) {
 		LocalDateTime localDateTime = LocalDateTime.now();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(formaterStyle.getValue());
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(formatterStyle.getValue());
 		String str = formatter.format(localDateTime);
 		return str;
 	}
-	
+
+	/**
+	 * 往后推移时间。
+	 * @param millis 毫秒数
+	 * @return
+	 */
 	public static long plusTime(long millis) {
 		Instant instant = Instant.now();
 		Instant newInstant = instant.plusMillis(millis);

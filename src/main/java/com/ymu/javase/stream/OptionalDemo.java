@@ -1,19 +1,11 @@
 package com.ymu.javase.stream;
 
-import static org.hamcrest.CoreMatchers.allOf;
-import static org.hamcrest.CoreMatchers.nullValue;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.stream.Stream;
-
-import org.junit.Test;
-
-import com.sun.jndi.url.rmi.rmiURLContext;
-
-import sun.awt.www.content.audio.x_aiff;
 
 /**
  * 介绍Optional<T>类，对类T的一个封装类。不会返回null，避免null值。可以阅读Optional类的源码。

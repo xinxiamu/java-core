@@ -1,16 +1,13 @@
 package com.ymu.javase.datetime;
 
 import org.junit.Test;
-import sun.util.resources.LocaleData;
 
 import java.time.DayOfWeek;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.time.temporal.WeekFields;
-import java.util.Locale;
 
 /**
  * 时间格式化。把机器时间转换成人看得懂的时间。

@@ -106,7 +106,15 @@ public class LocalDateDemo {
 		System.out.println(">>>当前日期：" + nowDate.toString() + "====" + nowDate.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.getDefault()));
 
 		//后推三个月
-		LocalDate d5 = nowDate.plusMonths(3);
-		System.out.println(d5.toString());
+//		LocalDate d5 = nowDate.plusMonths(3);
+//		System.out.println(d5.toString());
+
+//		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//		for (int i = 1; i < 21; i++) {
+//			System.out.println("下一天" + formatter.format(nowDate.plusDays(i)));
+//			System.out.println("上一天" + formatter.format(nowDate.plusDays(i - 1)));
+//		}
+
+		System.out.println(Math.abs(3 -8));
 	}
 }

@@ -10,6 +10,7 @@ import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.WeekFields;
 import java.util.*;
 
+import com.ymu.javase.string.StringUtils;
 import org.junit.Test;
 
 /**
@@ -115,6 +116,31 @@ public class LocalDateDemo {
 //			System.out.println("上一天" + formatter.format(nowDate.plusDays(i - 1)));
 //		}
 
-		System.out.println(Math.abs(3 -8));
+//		LocalDate wkFirstDate = nowDate.plusDays(-(nowDate.getDayOfWeek().getValue()) + 1);
+//		System.out.println(">>>>所在周第一天：" + wkFirstDate.toString());
+//		LocalDate wkEndDate = nowDate.plusDays(7 - nowDate.getDayOfWeek().getValue());
+//		System.out.println(">>>>所在周最后一天：" + wkEndDate);
+	}
+
+	//解析日期
+	@Test
+	public void test5() {
+		LocalDate ldt = LocalDate.parse("20190828",DateTimeFormatter.ofPattern("yyyyMMdd"));
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String s = formatter.format(ldt);
+		System.out.println(s);
+	}
+
+	//日期比较
+	@Test
+	public void test6() {
+		LocalDate ldt = LocalDate.parse("20190827",DateTimeFormatter.ofPattern("yyyyMMdd"));
+		System.out.println(ldt.toString());
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+		System.out.println(formatter.format(ldt));
+
+		System.out.println(ldt.equals(LocalDate.now()));
+		System.out.println(ldt.isBefore(LocalDate.now()));
+		System.out.println(ldt.isAfter(LocalDate.now()));
 	}
 }

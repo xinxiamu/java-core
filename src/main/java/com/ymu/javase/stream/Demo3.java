@@ -1,12 +1,10 @@
 package com.ymu.javase.stream;
 
-import static org.hamcrest.CoreMatchers.sameInstance;
+import org.junit.Test;
 
 import java.util.Comparator;
 import java.util.Optional;
 import java.util.stream.Stream;
-
-import org.junit.Test;
 
 /**
  * 1.有状态的转换；

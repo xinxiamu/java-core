@@ -36,7 +36,7 @@ public final class StringUtils {
 	}
 	
 	/**
-	 * 格式化数字。在前面补零。
+	 * 格式化数字。不够digits位数，在前面补零。
 	 * @param digits 格式化后位数。
 	 * @param num 实际数字。
 	 * @return

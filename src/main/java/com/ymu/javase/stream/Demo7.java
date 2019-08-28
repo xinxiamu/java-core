@@ -1,6 +1,9 @@
 package com.ymu.javase.stream;
 
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -13,11 +16,11 @@ public class Demo7 {
 	public static void main(String[] args) {
 		 Stream<Locale> locales = Stream.of(Locale.getAvailableLocales());
 		 //分组，把相同属性的对象分组
-//		 Map<String, List<Locale>> countyToLocales = locales.collect(Collectors.groupingBy(Locale::getCountry));//Locale::getCountry 进行分组的分类函数
-//		 List<Locale> swissLocales = countyToLocales.get("CH");
-//		 for (Locale locale : swissLocales) {
-//			System.out.println(locale.getLanguage());
-//		}
+		 Map<String, List<Locale>> countyToLocales = locales.collect(Collectors.groupingBy(Locale::getCountry));//Locale::getCountry 进行分组的分类函数
+		 List<Locale> swissLocales = countyToLocales.get("CH");
+		 for (Locale locale : swissLocales) {
+			System.out.println(locale.getLanguage());
+		}
 		 
 		 //分组后，指定v的具体类型，为set，而不是list
 //		 Map<String, Set<Locale>> countyToLocales = locales.collect(Collectors.groupingBy(Locale::getCountry, Collectors.toSet()));

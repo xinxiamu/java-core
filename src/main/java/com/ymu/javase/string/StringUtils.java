@@ -1,5 +1,7 @@
 package com.ymu.javase.string;
 
+import com.ymu.javase.datetime.DateTimeUtils;
+
 import java.util.Random;
 import java.util.UUID;
 
@@ -11,6 +13,9 @@ public final class StringUtils {
 		System.out.println(addZeroFront(7, 33));
 		System.out.println(addZeroFront(5, 35));
 		System.out.println(addZeroFront(5, 35465));
+
+		String now = DateTimeUtils.now();
+		System.out.println(now);
 	}
 	
 	/**

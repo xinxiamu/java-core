@@ -1,5 +1,6 @@
 package com.ymu.javase.datetime;
 
+import java.math.BigDecimal;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -116,19 +117,53 @@ public class LocalDateDemo {
 //			System.out.println("上一天" + formatter.format(nowDate.plusDays(i - 1)));
 //		}
 
-//		LocalDate wkFirstDate = nowDate.plusDays(-(nowDate.getDayOfWeek().getValue()) + 1);
-//		System.out.println(">>>>所在周第一天：" + wkFirstDate.toString());
-//		LocalDate wkEndDate = nowDate.plusDays(7 - nowDate.getDayOfWeek().getValue());
-//		System.out.println(">>>>所在周最后一天：" + wkEndDate);
+		LocalDate wkFirstDate = nowDate.plusDays(-(nowDate.getDayOfWeek().getValue()) + 1);
+		System.out.println(">>>>所在周第一天：" + wkFirstDate.toString());
+		LocalDate wkEndDate = nowDate.plusDays(7 - nowDate.getDayOfWeek().getValue());
+		System.out.println(">>>>所在周最后一天：" + wkEndDate);
+
+		List<List<String>> list = new ArrayList<>();
+		List w = new ArrayList();
+		for (int i = 0; i < 7 * 4; i++) {
+			if ((i + 1) % 7 == 0 ){
+				System.out.println(">>>>每周最后一天" + wkFirstDate.plusDays(i));
+				w.add(wkFirstDate.plusDays(i));
+				list.add(w);
+				w = new ArrayList();
+			} else {
+				System.out.println(wkFirstDate.plusDays(i));
+				w.add(wkFirstDate.plusDays(i));
+			}
+//			System.out.println(wkFirstDate.plusDays(i));
+//			list.add(nowDate.plusDays(i).toString());
+		}
+		System.out.println(list);
+
 	}
 
 	//解析日期
 	@Test
 	public void test5() {
-		LocalDate ldt = LocalDate.parse("20190828",DateTimeFormatter.ofPattern("yyyyMMdd"));
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		String s = formatter.format(ldt);
-		System.out.println(s);
+//		LocalDate ldt = LocalDate.parse("20190828",DateTimeFormatter.ofPattern("yyyyMMdd"));
+//		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//		String s = formatter.format(ldt);
+//		System.out.println(s);
+
+		//now的所在周的上一周的周一
+		LocalDate now = LocalDate.parse("20190908",DateTimeFormatter.ofPattern("yyyyMMdd"));
+		System.out.println(now.toString());
+		LocalDate beforW = now.plusWeeks(-1);
+		System.out.println(beforW);
+		LocalDate firstDateOfWeek = beforW.plusDays(-(beforW.getDayOfWeek().getValue()) + 1);//now的所在周的上一周的周一
+		System.out.println(firstDateOfWeek.toString());
+		LocalDate wkEndDate = firstDateOfWeek.plusDays(7 - firstDateOfWeek.getDayOfWeek().getValue());
+		System.out.println(">>>>所在周最后一天：" + wkEndDate);
+
+		int a = 13;
+		int b = 100;
+		BigDecimal bb = new BigDecimal((double) a/b);
+		double rmoney = bb.setScale(2,   BigDecimal.ROUND_HALF_UP).doubleValue();
+		System.out.println(rmoney);
 	}
 
 	//日期比较
@@ -142,5 +177,21 @@ public class LocalDateDemo {
 		System.out.println(ldt.equals(LocalDate.now()));
 		System.out.println(ldt.isBefore(LocalDate.now()));
 		System.out.println(ldt.isAfter(LocalDate.now()));
+
+	}
+
+	@Test
+	public void test7() {
+		LocalDate now = LocalDate.now();
+		System.out.println(now.isAfter(LocalDate.now()));
+
+		LocalDate temp = now;
+		LocalDate endDate = now.plusWeeks(3);
+		List<String> list = new ArrayList<>();
+		while (temp.isBefore(endDate)) {
+			list.add(temp.toString());
+			temp = temp.plusDays(1);
+		}
+		System.out.println(list);
 	}
 }

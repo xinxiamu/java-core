@@ -33,7 +33,7 @@ public class CharacterStreamDemo {
         }
     }
 
-    //逐行读取文本
+    //逐行读取文本， 放到缓冲区
     @Test
     public void copyCharactersLine() throws IOException {
         BufferedReader inputStream = null;

@@ -4,4 +4,5 @@ module java.core {
     requires commons.net;
     requires slf4j.api;
     requires java.desktop;
+    requires java.net.http;
 }

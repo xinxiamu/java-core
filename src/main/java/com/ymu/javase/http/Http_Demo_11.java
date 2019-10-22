@@ -6,6 +6,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 //java 11
+//http://openjdk.java.net/groups/net/httpclient/intro.html
 public class Http_Demo_11 {
 
     public static void main(String[] args) {
@@ -26,7 +27,6 @@ public class Http_Demo_11 {
                 .thenAccept(System.out::println)
                 .join();
 
-//        HttpClient.newHttpClient().sendAsync(HttpRequest.newBuilder().uri(URI.create("")).build(), HttpResponse.BodyHandlers.ofString()).join();
     }
 
 }

@@ -34,14 +34,57 @@ public final class DateTimeUtils {
 	/**
 	 * 返回date所在周的星期一时间对象。
 	 * @param date 如果date为null，则代表当前日期。
-	 * @return
+	 * @return 所在周周一对象。
 	 */
 	public static LocalDate getFirstDayOfWeek(LocalDate date) {
 		if (date == null) {
 			date = LocalDate.now();
 		}
+
 		LocalDate firstDayOfWeek = date.plusDays(-(date.getDayOfWeek().getValue()) + 1);
+
 		return firstDayOfWeek;
+	}
+
+	public static LocalDate getFirstDayOfWeek(String dateStr, FormatterStyle formatterStyle) {
+		LocalDate date;
+		if (dateStr == null || "".equals(dateStr)) {
+			date = LocalDate.now();
+		} else {
+			date = strToLocalDate(dateStr, formatterStyle);
+		}
+
+		LocalDate firstDayOfWeek = date.plusDays(-(date.getDayOfWeek().getValue()) + 1);
+
+		return firstDayOfWeek;
+	}
+
+	/**
+	 * 返回date所在周的最后一天即周日的对象。
+	 * @param date 如果date为null，则代表当前日期。
+	 * @return 所在周周日对象。
+	 */
+	public static LocalDate getEndDayOfWeek(LocalDate date) {
+		if (date == null) {
+			date = LocalDate.now();
+		}
+
+		LocalDate wkEndDate = date.plusDays(7 - date.getDayOfWeek().getValue());
+
+		return wkEndDate;
+	}
+
+	public static LocalDate getEndDayOfWeek(String dateStr, FormatterStyle formatterStyle) {
+		LocalDate date;
+		if (dateStr == null || "".equals(dateStr)) {
+			date = LocalDate.now();
+		} else {
+			date = strToLocalDate(dateStr, formatterStyle);
+		}
+
+		LocalDate wkEndDate = date.plusDays(7 - date.getDayOfWeek().getValue());
+
+		return wkEndDate;
 	}
 
 	/**
@@ -65,6 +108,17 @@ public final class DateTimeUtils {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(formatterStyle.getValue());
 		LocalDate ldt = LocalDate.parse(dateStr, formatter);
 		return ldt;
+	}
+
+	/**
+	 * 日期按指定格式转成字符串并返回。
+	 * @param localDate 待转换日期。
+	 * @param formatterStyle 日期字符串格式。
+	 * @return
+	 */
+	public static String LocalDateToStr(LocalDate localDate, FormatterStyle formatterStyle) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(formatterStyle.getValue());
+		return formatter.format(localDate);
 	}
 
 	/**
@@ -113,7 +167,6 @@ public final class DateTimeUtils {
 		long millis = timElapsed.toMillis();//毫秒表示
 		return millis; 
 	}
-
 
 	public static void main(String[] args) {
 //		System.out.println(now(FormaterStyle.N1));

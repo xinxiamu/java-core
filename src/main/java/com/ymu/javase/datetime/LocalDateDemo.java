@@ -76,6 +76,7 @@ public class LocalDateDemo {
 	@Test
 	public void  test3() {
 		LocalDate nowDate = LocalDate.now();
+		nowDate = LocalDate.of(2016,9,14);
 		System.out.println(">>>当前日期：" + nowDate.toString() + "====" + nowDate.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.getDefault()));
 
 		//nowDate是一年中的第几周

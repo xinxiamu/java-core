@@ -195,4 +195,21 @@ public class LocalDateDemo {
 		}
 		System.out.println(list);
 	}
+
+	@Test
+	public void test8() {
+		LocalDate nowDate = LocalDate.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd"); //DUN/JIT发布时间
+		for (int i = 1; i < 21; i++) { //D1后面20天
+			//下一天
+			LocalDate nextDate = nowDate.plusDays(i);
+			String nextDateStr = formatter.format(nextDate);
+			System.out.println(">>>>下一天：" + nextDateStr);
+			//上一天
+                    LocalDate lastDate = nowDate.plusDays(i - 1);
+//			LocalDate lastDate = nextDate.plusDays(-1);
+			String lastDateStr = formatter.format(lastDate);
+			System.out.println(">>>>>上一天：" + lastDateStr);
+		}
+	}
 }

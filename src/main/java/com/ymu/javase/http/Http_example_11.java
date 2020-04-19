@@ -72,6 +72,22 @@ public class Http_example_11 {
 
     }
 
+    public static CompletableFuture<Path> testGetAsyncOfFile() {
+        String uri = "https://scf.xcsqjr.com/frame/static/image/login_bg2.png";
+
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(uri))
+                .build();
+
+        return client.sendAsync(request, HttpResponse.BodyHandlers.ofFile(Paths.get("a.png")))
+                .thenApply(HttpResponse::body);
+
+    }
+
+    //==============================post ===============================
+
+
     public static void main(String[] args) {
         String respStr = testGetAsync().toString();
         System.out.println(respStr);

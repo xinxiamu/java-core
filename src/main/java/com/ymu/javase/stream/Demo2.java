@@ -1,7 +1,5 @@
 package com.ymu.javase.stream;
 
-import static org.hamcrest.CoreMatchers.describedAs;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;

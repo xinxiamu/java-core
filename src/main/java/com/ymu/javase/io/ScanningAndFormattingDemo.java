@@ -8,11 +8,15 @@ import java.io.FileReader;
 import java.util.Locale;
 import java.util.Scanner;
 
+/**
+ * Java 5Ìí¼ÓÁËjava.util.ScannerÀà£¬ÕâÊÇÒ»¸öÓÃÓÚÉ¨ÃèÊäÈëÎÄ±¾µÄĞÂµÄÊµÓÃ³ÌĞò¡£ËüÊÇÒÔÇ°µÄStringTokenizerºÍMatcherÀàÖ®¼äµÄÄ³ÖÖ½áºÏ¡£ÓÉÓÚÈÎºÎÊı¾İ¶¼±ØĞëÍ¨¹ıÍ¬Ò»Ä£Ê½µÄ²¶»ñ×é¼ìË÷»òÍ¨¹ıÊ¹ÓÃÒ»¸öË÷ÒıÀ´¼ìË÷ÎÄ±¾µÄ¸÷¸ö²¿·Ö¡£ÓÚÊÇ¿ÉÒÔ½áºÏÊ¹ÓÃÕıÔò±í´ïÊ½ºÍ´ÓÊäÈëÁ÷ÖĞ¼ìË÷ÌØ¶¨ÀàĞÍÊı¾İÏîµÄ·½·¨¡£ÕâÑù£¬³ıÁËÄÜÊ¹ÓÃÕıÔò±í´ïÊ½Ö®Íâ£¬ScannerÀà»¹¿ÉÒÔÈÎÒâµØ¶Ô×Ö·û´®ºÍ»ù±¾ÀàĞÍ(ÈçintºÍdouble)µÄÊı¾İ½øĞĞ·ÖÎö¡£½èÖúÓÚScanner£¬¿ÉÒÔÕë¶ÔÈÎºÎÒª´¦ÀíµÄÎÄ±¾ÄÚÈİ±àĞ´×Ô¶¨ÒåµÄÓï·¨·ÖÎöÆ÷¡£
+ * ¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+ */
 public class ScanningAndFormattingDemo {
 
     public static void main(String[] args) {
-        System.out.println("è¯·åœ¨æ§åˆ¶å°è¾“å…¥æ•°æ®ï¼š");
-        Scanner s = new Scanner(System.in); // ä»é”®ç›˜æ¥æ”¶æ•°æ®
+        System.out.println("ÇëÔÚ¿ØÖÆÌ¨ÊäÈëÊı¾İ£º");
+        Scanner s = new Scanner(System.in); // ´Ó¼üÅÌ½ÓÊÕÊı¾İ
         if (s.hasNext()) {
             System.out.println(s.next());
         }
@@ -25,9 +29,9 @@ public class ScanningAndFormattingDemo {
         try {
             s = new Scanner(new BufferedReader(new FileReader("xanadu.txt")));
 
-            while (s.hasNext()) { //ç©ºæ ¼åˆ†éš”
+            while (s.hasNext()) { //¿Õ¸ñ·Ö¸ô
                 System.out.println(s.next());
-                if (s.hasNextInt()) {
+                if (s.hasNextInt()) { //ÅĞ¶ÏÊÇ·ñÊÇÕûĞÍÊı×Ö
                     System.out.println(">>int:" + s.nextInt());
                 }
             }
@@ -47,7 +51,7 @@ public class ScanningAndFormattingDemo {
         try {
             s = new Scanner(new BufferedReader(new FileReader("xanadu.txt")));
 
-            while (s.hasNextLine()) { //ä¸€è¡Œä¸€ä¸ªå•å…ƒ
+            while (s.hasNextLine()) { //Ò»ĞĞÒ»¸öµ¥Ôª£¬»»ĞĞ·û½áÊø
                 System.out.println(s.nextLine());
             }
         } catch (FileNotFoundException e) {
@@ -65,9 +69,9 @@ public class ScanningAndFormattingDemo {
 
         try {
             s = new Scanner(new BufferedReader(new FileReader("xanadu.txt")));
-            s.useDelimiter(",\\s*"); //æŒ‰é€—å·åˆ†éš”
+            s.useDelimiter(",\\s*"); //°´¶ººÅ·Ö¸ô£¬ÕıÔò
 
-            while (s.hasNext()) { //ä¸€è¡Œä¸€ä¸ªå•å…ƒ
+            while (s.hasNext()) { //Ò»ĞĞÒ»¸öµ¥Ôª
                 System.out.println(s.next());
             }
         } catch (FileNotFoundException e) {
@@ -102,5 +106,15 @@ public class ScanningAndFormattingDemo {
         }
 
         System.out.println(sum);
+    }
+
+    //------------------------------------- format
+
+    @Test
+    public void testFormat1() {
+        int i = 2;
+        double r = Math.sqrt(i);
+
+        System.out.format("The square root of %d is %f.%n", i, r);
     }
 }

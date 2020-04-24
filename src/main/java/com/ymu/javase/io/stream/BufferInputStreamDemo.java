@@ -1,4 +1,4 @@
-package com.ymu.javase.io;
+package com.ymu.javase.io.stream;
 
 import org.junit.Test;
 

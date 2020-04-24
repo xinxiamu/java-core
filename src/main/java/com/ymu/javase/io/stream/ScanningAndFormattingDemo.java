@@ -108,8 +108,8 @@ public class ScanningAndFormattingDemo {
         System.out.println(sum);
     }
 
-    //------------------------------------- format
-
+    //------------------------------------- format 格式化输出
+    //https://docs.oracle.com/javase/tutorial/essential/io/formatting.html
     @Test
     public void testFormat1() {
         int i = 2;

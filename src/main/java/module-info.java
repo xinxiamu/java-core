@@ -6,5 +6,5 @@ module java.core {
     requires java.desktop;
     requires java.net.http;
     requires org.apache.commons.lang3;
-    exports com.ymu.javase.io;
+    exports com.ymu.javase.io.stream;
 }

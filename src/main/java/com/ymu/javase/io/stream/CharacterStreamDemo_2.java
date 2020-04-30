@@ -7,7 +7,7 @@ import java.io.*;
 /**
  * 字符流。所有字符流都继承Reader和Writer类。
  */
-public class CharacterStreamDemo {
+public class CharacterStreamDemo_2 {
 
     //逐个字符读取，16位的int表示一个字符
     @Test

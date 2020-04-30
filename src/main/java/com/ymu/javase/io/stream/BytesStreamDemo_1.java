@@ -7,7 +7,7 @@ import java.io.*;
 /**
  * 字节流使用演示。InputSteam和OutputStream。
  */
-public class BytesStreamDemo {
+public class BytesStreamDemo_1 {
 
 //    public static void main(String[] args) throws Exception {
 //        copyBytes();

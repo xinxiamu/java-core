@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.io.*;
 
-public class BufferInputStreamDemo {
+public class BufferInputStreamDemo_3 {
 
     public static void main(String[] args) throws IOException {
 
@@ -69,7 +69,7 @@ public class BufferInputStreamDemo {
      */
     @Test
     public void testMarkAndReset() throws IOException {
-        BufferInputStreamDemo test = new BufferInputStreamDemo();
+        BufferInputStreamDemo_3 test = new BufferInputStreamDemo_3();
         String fileName = "xanadu.txt";
         InputStream in1 = new FileInputStream(new File(fileName));
         if (!in1.markSupported()) {

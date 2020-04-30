@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.io.*;
 
-public class BufferOutputStreamDemo {
+public class BufferOutputStreamDemo_3 {
 
     public static void main(String[] args) throws IOException {
         byte[] bytes = "{ab}".getBytes();

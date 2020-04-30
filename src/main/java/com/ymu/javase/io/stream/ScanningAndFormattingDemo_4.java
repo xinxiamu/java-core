@@ -9,14 +9,14 @@ import java.util.Locale;
 import java.util.Scanner;
 
 /**
- * Java 5Ìí¼ÓÁËjava.util.ScannerÀà£¬ÕâÊÇÒ»¸öÓÃÓÚÉ¨ÃèÊäÈëÎÄ±¾µÄĞÂµÄÊµÓÃ³ÌĞò¡£ËüÊÇÒÔÇ°µÄStringTokenizerºÍMatcherÀàÖ®¼äµÄÄ³ÖÖ½áºÏ¡£ÓÉÓÚÈÎºÎÊı¾İ¶¼±ØĞëÍ¨¹ıÍ¬Ò»Ä£Ê½µÄ²¶»ñ×é¼ìË÷»òÍ¨¹ıÊ¹ÓÃÒ»¸öË÷ÒıÀ´¼ìË÷ÎÄ±¾µÄ¸÷¸ö²¿·Ö¡£ÓÚÊÇ¿ÉÒÔ½áºÏÊ¹ÓÃÕıÔò±í´ïÊ½ºÍ´ÓÊäÈëÁ÷ÖĞ¼ìË÷ÌØ¶¨ÀàĞÍÊı¾İÏîµÄ·½·¨¡£ÕâÑù£¬³ıÁËÄÜÊ¹ÓÃÕıÔò±í´ïÊ½Ö®Íâ£¬ScannerÀà»¹¿ÉÒÔÈÎÒâµØ¶Ô×Ö·û´®ºÍ»ù±¾ÀàĞÍ(ÈçintºÍdouble)µÄÊı¾İ½øĞĞ·ÖÎö¡£½èÖúÓÚScanner£¬¿ÉÒÔÕë¶ÔÈÎºÎÒª´¦ÀíµÄÎÄ±¾ÄÚÈİ±àĞ´×Ô¶¨ÒåµÄÓï·¨·ÖÎöÆ÷¡£
- * ¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+ * Java 5æ·»åŠ äº†java.util.Scannerç±»ï¼Œè¿™æ˜¯ä¸€ä¸ªç”¨äºæ‰«æè¾“å…¥æ–‡æœ¬çš„æ–°çš„å®ç”¨ç¨‹åºã€‚å®ƒæ˜¯ä»¥å‰çš„StringTokenizerå’ŒMatcherç±»ä¹‹é—´çš„æŸç§ç»“åˆã€‚ç”±äºä»»ä½•æ•°æ®éƒ½å¿…é¡»é€šè¿‡åŒä¸€æ¨¡å¼çš„æ•è·ç»„æ£€ç´¢æˆ–é€šè¿‡ä½¿ç”¨ä¸€ä¸ªç´¢å¼•æ¥æ£€ç´¢æ–‡æœ¬çš„å„ä¸ªéƒ¨åˆ†ã€‚äºæ˜¯å¯ä»¥ç»“åˆä½¿ç”¨æ­£åˆ™è¡¨è¾¾å¼å’Œä»è¾“å…¥æµä¸­æ£€ç´¢ç‰¹å®šç±»å‹æ•°æ®é¡¹çš„æ–¹æ³•ã€‚è¿™æ ·ï¼Œé™¤äº†èƒ½ä½¿ç”¨æ­£åˆ™è¡¨è¾¾å¼ä¹‹å¤–ï¼ŒScannerç±»è¿˜å¯ä»¥ä»»æ„åœ°å¯¹å­—ç¬¦ä¸²å’ŒåŸºæœ¬ç±»å‹(å¦‚intå’Œdouble)çš„æ•°æ®è¿›è¡Œåˆ†æã€‚å€ŸåŠ©äºScannerï¼Œå¯ä»¥é’ˆå¯¹ä»»ä½•è¦å¤„ç†çš„æ–‡æœ¬å†…å®¹ç¼–å†™è‡ªå®šä¹‰çš„è¯­æ³•åˆ†æå™¨ã€‚
+ * â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
  */
-public class ScanningAndFormattingDemo {
+public class ScanningAndFormattingDemo_4 {
 
     public static void main(String[] args) {
-        System.out.println("ÇëÔÚ¿ØÖÆÌ¨ÊäÈëÊı¾İ£º");
-        Scanner s = new Scanner(System.in); // ´Ó¼üÅÌ½ÓÊÕÊı¾İ
+        System.out.println("è¯·åœ¨æ§åˆ¶å°è¾“å…¥æ•°æ®ï¼š");
+        Scanner s = new Scanner(System.in); // ä»é”®ç›˜æ¥æ”¶æ•°æ®
         if (s.hasNext()) {
             System.out.println(s.next());
         }
@@ -29,9 +29,9 @@ public class ScanningAndFormattingDemo {
         try {
             s = new Scanner(new BufferedReader(new FileReader("xanadu.txt")));
 
-            while (s.hasNext()) { //¿Õ¸ñ·Ö¸ô
+            while (s.hasNext()) { //ç©ºæ ¼åˆ†éš”
                 System.out.println(s.next());
-                if (s.hasNextInt()) { //ÅĞ¶ÏÊÇ·ñÊÇÕûĞÍÊı×Ö
+                if (s.hasNextInt()) { //åˆ¤æ–­æ˜¯å¦æ˜¯æ•´å‹æ•°å­—
                     System.out.println(">>int:" + s.nextInt());
                 }
             }
@@ -51,7 +51,7 @@ public class ScanningAndFormattingDemo {
         try {
             s = new Scanner(new BufferedReader(new FileReader("xanadu.txt")));
 
-            while (s.hasNextLine()) { //Ò»ĞĞÒ»¸öµ¥Ôª£¬»»ĞĞ·û½áÊø
+            while (s.hasNextLine()) { //ä¸€è¡Œä¸€ä¸ªå•å…ƒï¼Œæ¢è¡Œç¬¦ç»“æŸ
                 System.out.println(s.nextLine());
             }
         } catch (FileNotFoundException e) {
@@ -69,9 +69,9 @@ public class ScanningAndFormattingDemo {
 
         try {
             s = new Scanner(new BufferedReader(new FileReader("xanadu.txt")));
-            s.useDelimiter(",\\s*"); //°´¶ººÅ·Ö¸ô£¬ÕıÔò
+            s.useDelimiter(",\\s*"); //æŒ‰é€—å·åˆ†éš”ï¼Œæ­£åˆ™
 
-            while (s.hasNext()) { //Ò»ĞĞÒ»¸öµ¥Ôª
+            while (s.hasNext()) { //ä¸€è¡Œä¸€ä¸ªå•å…ƒ
                 System.out.println(s.next());
             }
         } catch (FileNotFoundException e) {
@@ -108,7 +108,7 @@ public class ScanningAndFormattingDemo {
         System.out.println(sum);
     }
 
-    //------------------------------------- format ¸ñÊ½»¯Êä³ö
+    //------------------------------------- format æ ¼å¼åŒ–è¾“å‡º
     //https://docs.oracle.com/javase/tutorial/essential/io/formatting.html
     @Test
     public void testFormat1() {

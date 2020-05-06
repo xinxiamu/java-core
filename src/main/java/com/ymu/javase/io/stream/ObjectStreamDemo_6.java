@@ -1,7 +1,5 @@
 package com.ymu.javase.io.stream;
 
-import org.junit.Test;
-
 import java.io.*;
 
 //对象流。支持对象I/O

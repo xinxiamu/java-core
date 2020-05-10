@@ -1,62 +1,51 @@
 package com.design.pattern.strategy.sample03;
 
-interface TravelStrategy
-{
-	
-	public void travelMethod();
+interface TravelStrategy {
+
+    public void travelMethod();
 
 }
 
-class AirplaneStrategy implements  TravelStrategy
-{	
-	public void travelMethod()
-	{
-		System.out.println("·É»úÓÎ£¡");
-	}
+class AirplaneStrategy implements TravelStrategy {
+    public void travelMethod() {
+        System.out.println("é£æœºæ¸¸ï¼");
+    }
 }
 
-class TrainStrategy implements  TravelStrategy
-{
-	public void travelMethod()
-	{
-		System.out.println("»ğ³µÓÎ£¡");
-	}
+class TrainStrategy implements TravelStrategy {
+    public void travelMethod() {
+        System.out.println("ç«è½¦æ¸¸ï¼");
+    }
 }
 
-class SelfTravelStrategy implements  TravelStrategy
-{
-	public void travelMethod()
-	{
-		System.out.println("×Ô¼İÓÎ£¡");
-	}
+class SelfTravelStrategy implements TravelStrategy {
+    public void travelMethod() {
+        System.out.println("è‡ªé©¾æ¸¸ï¼");
+    }
 }
 
-class BicycleTravelStrategy implements  TravelStrategy
-{
-	public void travelMethod()
-	{
-		System.out.println("×ÔĞĞ³µÓÎ£¡");
-	}
+class BicycleTravelStrategy implements TravelStrategy {
+    public void travelMethod() {
+        System.out.println("è‡ªè¡Œè½¦æ¸¸ï¼");
+    }
 }
 
-class MyContext
-{
-	private TravelStrategy ts;
-	public MyContext(TravelStrategy ts)
-	{
-		this.ts=ts;
-	}
-	public void travelMethod()
-	{
-		ts.travelMethod();
-	}
+class MyContext {
+    private TravelStrategy ts;
+
+    public MyContext(TravelStrategy ts) {
+        this.ts = ts;
+    }
+
+    public void travelMethod() {
+        ts.travelMethod();
+    }
 }
 
-class Client
-{
-	public static void main(String args[])
-	{
-		MyContext mc=new MyContext((TravelStrategy)XMLUtil.getBean());
-		mc.travelMethod();
-	}
+class Client {
+    public static void main(String args[]) {
+//        MyContext mc = new MyContext((TravelStrategy) XMLUtil.getBean());
+        MyContext mc = new MyContext(new AirplaneStrategy());
+        mc.travelMethod();
+    }
 }

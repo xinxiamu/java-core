@@ -1,4 +1,4 @@
-package com.ymu.javase.io;
+package com.ymu.javase.io.stream;
 
 import org.junit.Test;
 
@@ -110,6 +110,12 @@ public class ScanningAndFormattingDemo_4 {
 
     //------------------------------------- format 格式化输出
     //https://docs.oracle.com/javase/tutorial/essential/io/formatting.html
+    //d formats an integer value as a decimal value.
+    //f formats a floating point value as a decimal value.
+    //n outputs a platform-specific line terminator.
+    //x formats an integer as a hexadecimal value.
+    //s formats any value as a string.
+    //tB formats an integer as a locale-specific month name.
     @Test
     public void testFormat1() {
         int i = 2;

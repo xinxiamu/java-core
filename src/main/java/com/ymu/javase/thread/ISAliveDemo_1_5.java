@@ -6,12 +6,19 @@ package com.ymu.javase.thread;
 public class ISAliveDemo_1_5 {
 
     public static void main(String[] args) throws InterruptedException {
-        MyThread myThread = new MyThread();
+       /* MyThread myThread = new MyThread();
         System.out.println("begin==" + myThread.isAlive());
         myThread.start();
         System.out.println("end==" + myThread.isAlive()); //这里输出可能是true，也可能是false，取决于线程是否已经运行完成。
         Thread.sleep(5000);
-        System.out.println("end1==" + myThread.isAlive()); //main线程休眠后，myThread已经执行完成并终止，所以这里输出false
+        System.out.println("end1==" + myThread.isAlive()); //main线程休眠后，myThread已经执行完成并终止，所以这里输出false*/
+
+        CountOperate countOperate = new CountOperate();
+        Thread t1 = new Thread(countOperate);
+        System.out.println("main begin t1 isAlive=" + t1.isAlive());
+        t1.setName("A");
+        t1.start();
+        System.out.println("main end t1 isAlive=" + t1.isAlive());
     }
 
     public static class MyThread extends Thread {
@@ -23,6 +30,28 @@ public class ISAliveDemo_1_5 {
                 e.printStackTrace();
             }
             System.out.println("run=" + this.isAlive());
+        }
+    }
+
+    public static class CountOperate extends Thread {
+
+        public CountOperate() {
+            System.out.println("CountOperate---------begin");
+            System.out.println("Thread.currentThread.getName()=" + Thread.currentThread().getName());
+            System.out.println("Thread.currentThread().isAlive()=" + Thread.currentThread().isAlive());
+            System.out.println("this.getName()=" + this.getName());
+            System.out.println("this.isAlive()=" + this.isAlive());
+            System.out.println("CountOperate---------end");
+        }
+
+        @Override
+        public void run() {
+            System.out.println("run::::::::::begin");
+            System.out.println("Thread.currentThread.getName()=" + Thread.currentThread().getName());
+            System.out.println("Thread.currentThread().isAlive()=" + Thread.currentThread().isAlive());
+            System.out.println("this.getName()=" + this.getName());
+            System.out.println("this.isAlive()=" + this.isAlive());
+            System.out.println("run:::::::::::end");
         }
     }
 }

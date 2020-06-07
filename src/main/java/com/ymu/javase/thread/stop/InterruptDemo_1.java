@@ -1,37 +1,72 @@
 package com.ymu.javase.thread.stop;
 
+import org.junit.Test;
+
 /**
- * ä»‹ç»interrupt()æ–¹æ³•ã€‚è°ƒç”¨è¯¥æ–¹æ³•ï¼Œçº¿ç¨‹å¹¶ä¸æ˜¯çœŸçš„ç»ˆæ­¢äº†ï¼Œè€Œåªæ˜¯åœ¨å½“å‰çº¿ç¨‹æ‰“äº†ä¸ªåœæ­¢çš„æ ‡è®°ã€‚
+ * ½éÉÜinterrupt()·½·¨¡£µ÷ÓÃ¸Ã·½·¨£¬Ïß³Ì²¢²»ÊÇÕæµÄÖÕÖ¹ÁË£¬¶øÖ»ÊÇÔÚµ±Ç°Ïß³Ì´òÁË¸öÍ£Ö¹µÄ±ê¼Ç¡£
  */
 public class InterruptDemo_1 {
 
     public static void main(String[] args) {
-        //è°ƒç”¨äº†interrupt()æ–¹æ³•ï¼Œä½†æ˜¯å¹¶æ²¡æœ‰çœŸæ­£ç»ˆæ­¢çº¿ç¨‹
+        //µ÷ÓÃÁËinterrupt()·½·¨£¬µ«ÊÇ²¢Ã»ÓĞÕæÕıÖÕÖ¹Ïß³Ì
         /*try {
             MyThread myThread = new MyThread();
             myThread.setName("myThread");
             myThread.start();
             Thread.sleep(5000);
-            myThread.interrupt(); //ä¸ºçº¿ç¨‹myThreadæ‰“ä¸Šç»ˆæ­¢æ ‡å¿—ï¼Œä½†æ˜¯å¹¶æ²¡æœ‰çœŸæ­£ç»ˆæ­¢çº¿ç¨‹
+            myThread.interrupt(); //ÎªÏß³ÌmyThread´òÉÏÖÕÖ¹±êÖ¾£¬µ«ÊÇ²¢Ã»ÓĞÕæÕıÖÕÖ¹Ïß³Ì
             System.out.println(Thread.currentThread().getName() + " end");
         } catch (InterruptedException e) {
             e.printStackTrace();
-            System.out.println("mainçº¿ç¨‹å¼‚å¸¸");
+            System.out.println("mainÏß³ÌÒì³£");
         }*/
 
-        //åˆ¤æ–­çº¿ç¨‹æ˜¯å¦å·²ç»ä¸­æ–­
-        try {
+        //========================== ÅĞ¶ÏÏß³ÌÊÇ·ñÒÑ¾­ÖĞ¶Ï start
+
+        //ÅĞ¶Ïµ±Ç°Ïß³ÌÊÇ·ñÒÑ¾­ÖĞ¶Ï,interrupted()·½·¨
+        /*try {
             MyThread myThread = new MyThread();
             myThread.setName("myThread");
             myThread.start();
             Thread.sleep(5000);
-            myThread.interrupt(); //ä¸ºçº¿ç¨‹myThreadæ‰“ä¸Šç»ˆæ­¢æ ‡å¿—ï¼Œä½†æ˜¯å¹¶æ²¡æœ‰çœŸæ­£ç»ˆæ­¢çº¿ç¨‹
-
+            myThread.interrupt();
+            //µ±Ç°Ïß³ÌÊÇmainÏß³Ì£¬µÄÈ·»¹Ã»ÖĞ¶Ï£¬ËùÒÔ¶¼Êä³öfalse
+            System.out.println("ÊÇ·ñÍ£Ö¹ 1£¿=" + myThread.interrupted());
+            System.out.println("ÊÇ·ñÍ£Ö¹ 2£¿=" + myThread.interrupted());
         } catch (InterruptedException e) {
             e.printStackTrace();
-            System.out.println("mainçº¿ç¨‹å¼‚å¸¸");
+            System.out.println("mainÏß³ÌÒì³£");
         }
-        System.out.println("endï¼");
+        System.out.println("end£¡");*/
+
+        //ÅĞ¶Ïµ±Ç°Ïß³ÌÊÇ·ñÒÑ¾­ÖĞ¶Ï,interrupted()·½·¨£¬µ÷ÓÃºó»áÇå³ıÖĞ¶Ï×´Ì¬¡£
+        /*try {
+            Thread.currentThread().interrupt();
+            //µ±Ç°Ïß³ÌÊÇmainÏß³ÌÒÑ¾­ÖĞ¶Ï,Ö»ÊÇ´òÉÏÖĞ¶Ï±êÖ¾£¬Êµ¼ÊÉÏmainÏß³Ì»¹ÊÇÔÚÔËĞĞµÄ¡£
+            System.out.println("ÊÇ·ñÍ£Ö¹ 1£¿=" + Thread.interrupted()); //Êä³ötrue£¬ÒÑ¾­±êÖ¾ÖĞ¶Ï
+            System.out.println("ÊÇ·ñÍ£Ö¹ 2£¿=" + Thread.interrupted()); //Êä³öfalse£¬ÒòÎªµÚÒ»´Îµ÷ÓÃºó»áÇå³şÖĞ¶Ï×´Ì¬£¬ËùÒÔÏÂ´Îµ÷ÓÃ·µ»Øfalse¡£
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("mainÏß³ÌÒì³£");
+        }
+        System.out.println("end£¡");*/
+
+        //ÅĞ¶Ï¸ÃÏß³ÌÊÇ·ñÒÑ¾­ÖĞ¶Ï¡£isInterrupted(),ÅĞ¶ÏµÄÊÇ¸ÃÏß³ÌÊÇ·ñÒÑ¾­ÖĞ¶Ï£¬µ«²»Çå³ı×´Ì¬±êÖ¾£¬²»ÊÇµ±Ç°Ïß³Ì¡£×¢ÒâºÍÉÏÃæÇø±ğ¡£
+        try {
+            MyThread myThread = new MyThread();
+            myThread.setName("myThread");
+            myThread.start();
+//            Thread.sleep(5000);
+            myThread.interrupt();
+            System.out.println("ÊÇ·ñÍ£Ö¹ 1£¿=====================" + myThread.isInterrupted());
+            System.out.println("ÊÇ·ñÍ£Ö¹ 2£¿=====================" + myThread.isInterrupted());
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("mainÏß³ÌÒì³£");
+        }
+        System.out.println("end£¡");
+
+        //========================== ÅĞ¶ÏÏß³ÌÊÇ·ñÒÑ¾­ÖĞ¶Ï end
     }
 
     public static class MyThread extends Thread {

@@ -36,6 +36,14 @@
 		</dependency>
 		
 		<!-- apache commoms projects end -->
+
+		<dependency>
+			<groupId>com.mu.ww</groupId>
+			<artifactId>wwww</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/jni/hello.dll</systemPath>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -47,6 +55,9 @@
 				<configuration>
 					<source>11</source>
 					<target>11</target>
+					<!--<compilerArguments>
+						<extdirs>jni</extdirs>
+					</compilerArguments>-->
 				</configuration>
 			</plugin>
 		</plugins>

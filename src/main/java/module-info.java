@@ -9,5 +9,4 @@ module java.core {
     exports com.ymu.javase.io.stream;
     exports com.ymu.javase.thread;
     exports  com.ymu.javase.io.fileio;
-    exports com.ymu.javase.thread.stop;
 }

@@ -6,26 +6,26 @@ import java.util.stream.Stream;
 public class Demo1 {
 	
 	public static void main(String[] args) {
-		//==============åˆ›å»ºStream
-		//æ•°ç»„è½¬æˆstream
+		//==============´´½¨Stream
+		//Êı×é×ª³Éstream
 		String wordsStr = "I am come from china,thank you";
 		String[] words = wordsStr.split("[\\P{L}+]");
 		Stream<String> s = Stream.of(words);
 		long cout = s.filter(w -> w.length() > 4).count();
-		System.out.println("å•è¯é•¿åº¦å¤§äº4çš„ä¸ªæ•°ï¼š" + cout);
+		System.out.println("µ¥´Ê³¤¶È´óÓÚ4µÄ¸öÊı£º" + cout);
 		
-		//å¦å¤–ä¸€ç§æ–¹å¼
+		//ÁíÍâÒ»ÖÖ·½Ê½
 		Stream<String> s1 = Stream.of("I", "am", "come", "from", "china");
-		System.out.println("å•è¯é•¿åº¦å¤§äº4çš„ä¸ªæ•°ï¼š" + s1.filter(w -> w.length() > 4).count());
+		System.out.println("µ¥´Ê³¤¶È´óÓÚ4µÄ¸öÊı£º" + s1.filter(w -> w.length() > 4).count());
 		
-		//å°†æ•°ç»„çš„ä¸€éƒ¨åˆ†è½¬æˆStream
+		//½«Êı×éµÄÒ»²¿·Ö×ª³ÉStream
 		Stream<String> s2 = Arrays.stream(words, 0, 4);
-		System.out.println("å•è¯é•¿åº¦å¤§äº4çš„ä¸ªæ•°ï¼š" + s2.filter(w -> w.length() > 3).count());
+		System.out.println("µ¥´Ê³¤¶È´óÓÚ4µÄ¸öÊı£º" + s2.filter(w -> w.length() > 3).count());
 		
-		//ç”Ÿæˆä¸€ä¸ªéšæœºæ•°çš„Stream
+		//Éú³ÉÒ»¸öËæ»úÊıµÄStream
 		Stream<Double> random = Stream.generate(Math::random);
 		
-		//å¤„ç†æ–‡ä»¶æ–‡ä»¶è¡Œ
+		//´¦ÀíÎÄ¼şÎÄ¼şĞĞ
 //		try(Stream<String> lines = Files.lines(path)) {
 //			
 //		}

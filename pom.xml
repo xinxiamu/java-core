@@ -4,7 +4,10 @@
 	<groupId>com.mu</groupId>
 	<artifactId>java-core</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<modules>
+		<module>apache-common</module>
+	</modules>
+	<packaging>pom</packaging>
 	<name>java-core</name>
 	<dependencies>
 		<dependency>
@@ -37,13 +40,13 @@
 		
 		<!-- apache commoms projects end -->
 
-		<dependency>
+		<!--<dependency>
 			<groupId>com.mu.ww</groupId>
 			<artifactId>wwww</artifactId>
 			<version>1.0</version>
 			<scope>system</scope>
 			<systemPath>${basedir}/jni/hello.dll</systemPath>
-		</dependency>
+		</dependency>-->
 	</dependencies>
 
 	<build>

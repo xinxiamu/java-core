@@ -2,7 +2,7 @@ package com.ymu.javase.thread.stop;
 
 import org.junit.Test;
 
-/**t4
+/**
  * 
  * 介绍interrupt()方法。调用该方法，线程并不是真的终止了，而只是在当前线程打了个停止的标记。
  */

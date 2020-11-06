@@ -21,7 +21,7 @@ import org.junit.Test;
  *
  */
 public class LocalDateDemo {
-	
+
 	public static void main(String[] args) {
 		//创建一个本地日期
 //		LocalDate localDate = LocalDate.now();//不可变类
@@ -32,45 +32,45 @@ public class LocalDateDemo {
 		System.out.println(">>>>dayOfMoth:" + localDate.getDayOfMonth());//一月中的第几号
 		System.out.println(">>>>>dayOfWeek:" + localDate.getDayOfWeek().getValue() + "===" + localDate.getDayOfWeek());  //一个星期中星期几
 		System.out.println(localDate.getMonth().maxLength());//本月共有多少天
-		
+
 		//判断是否为闰年
 		System.out.println(localDate.isLeapYear());//可以被4或者400整除但不能被100整除的为闰年
-		
+
 		//返回两个本地日期之间的距离
 		LocalDate l1 = LocalDate.now();
 		long diffDay = localDate.until(l1, ChronoUnit.DAYS);//天为表示单位，可以以其他的表示
 		System.out.println(diffDay);
-		
+
 		//解析日期：
-		LocalDate ldt = LocalDate.parse("2007/12/03",DateTimeFormatter.ofPattern("yyyy/MM/dd")); 
+		LocalDate ldt = LocalDate.parse("2007/12/03",DateTimeFormatter.ofPattern("yyyy/MM/dd"));
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		String s = formatter.format(ldt);
 		System.out.println(s);
 	}
-	
+
 	@Test
 	public void test1() {
 		LocalDate nowDate = LocalDate.now();
 		System.out.println(nowDate.getDayOfWeek().getValue());
-		System.out.println(nowDate.toString()); 
-		
-		LocalDate startDate = LocalDate.of(2019, 05, 23);
-		System.out.println(startDate.getDayOfWeek().getValue()); 
+		System.out.println(nowDate.toString());
+
+		LocalDate startDate = LocalDate.of(2020, 11, 9);
+		System.out.println(startDate.getDayOfWeek().getValue());
 		long diffDay = nowDate.until(startDate, ChronoUnit.DAYS);//天为表示单位，可以以其他的表示
 		System.out.println(">>>diff:" + diffDay);
-		
+
 		LocalDate newDate = nowDate.plusDays(20);
-		System.out.println(newDate.toString()); 
+		System.out.println(newDate.toString());
 	}
-	
+
 	@Test
 	public void test2() {
 		LocalDate pubD = LocalDate.of(2019, 05, 22);
 		int dw = pubD.getDayOfWeek().getValue(); //本周的星期几
-		System.out.println(dw); 
+		System.out.println(dw);
 		LocalDate enDate = pubD.plusDays(7 - dw).plusWeeks(2);
 		System.out.println(enDate);
-		System.out.println(pubD.plusWeeks(2).toString()); 
+		System.out.println(pubD.plusWeeks(2).toString());
 	}
 
 	@Test

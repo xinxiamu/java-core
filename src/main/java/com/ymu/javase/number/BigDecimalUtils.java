@@ -38,11 +38,14 @@ public class BigDecimalUtils {
     }
 
     /**
-     * 加减乘除演示
+     * 比较大小
      */
     @Test
     public void test2() {
-
+        BigDecimal a1 = BigDecimal.valueOf(1000.31);
+        BigDecimal a2 = BigDecimal.valueOf(1000.30);
+        System.out.println(a1.compareTo(a2));
+        System.out.println(a1.subtract(a2));
     }
-    
+
 }

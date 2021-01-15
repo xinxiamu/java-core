@@ -15,29 +15,29 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
 		<dependency>
 		    <groupId>org.slf4j</groupId>
 		    <artifactId>slf4j-api</artifactId>
 		    <version>1.7.26</version>
 		</dependency>
-		
-		
-		
+
+
+
 		<!-- apache commoms projects start -->
 		<dependency>
 		  <groupId>commons-net</groupId>
 		  <artifactId>commons-net</artifactId>
 		  <version>3.6</version>
 		</dependency>
-		
+
 		<dependency>
 		  <groupId>org.apache.commons</groupId>
 		  <artifactId>commons-lang3</artifactId>
 		  <version>3.9</version>
 		</dependency>
-		
+
 		<!-- apache commoms projects end -->
 
 		<!--<dependency>
@@ -47,6 +47,12 @@
 			<scope>system</scope>
 			<systemPath>${basedir}/jni/hello.dll</systemPath>
 		</dependency>-->
+
+		<dependency>
+			<groupId>io.minio</groupId>
+			<artifactId>minio</artifactId>
+			<version>8.0.3</version>
+		</dependency>
 	</dependencies>
 
 	<build>

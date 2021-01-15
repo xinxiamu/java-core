@@ -1,4 +1,5 @@
 module java.core {
+    requires minio;
     requires junit;
     requires java.sql;
     requires commons.net;

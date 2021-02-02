@@ -6,6 +6,7 @@ module java.core {
     requires slf4j.api;
     requires java.desktop;
     requires java.net.http;
+    requires okhttp3;
     requires org.apache.commons.lang3;
     exports com.ymu.javase.datetime;
     exports com.ymu.javase.io.stream;

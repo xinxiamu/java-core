@@ -13,4 +13,5 @@ module java.core {
     exports com.ymu.javase.thread;
     exports com.ymu.javase.io.fileio;
     exports com.ymu.javase.number;
+    exports com.ymu.study.okhttp;
 }

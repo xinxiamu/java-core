@@ -7,6 +7,7 @@ module java.core {
     requires java.desktop;
     requires java.net.http;
     requires okhttp3;
+    requires zip4j;
     requires org.apache.commons.lang3;
     exports com.ymu.javase.datetime;
     exports com.ymu.javase.io.stream;
@@ -14,4 +15,5 @@ module java.core {
     exports com.ymu.javase.io.fileio;
     exports com.ymu.javase.number;
     exports com.ymu.study.okhttp;
+    exports com.ymu.study.zip4j;
 }

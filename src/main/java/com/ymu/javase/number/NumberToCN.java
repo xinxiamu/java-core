@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 
 public class NumberToCN {
-	 /**
+    /**
      * 汉语中数字大写
      */
     private static final String[] CN_UPPER_NUMBER = { "零", "壹", "贰", "叁", "肆",
@@ -34,7 +34,7 @@ public class NumberToCN {
 
     /**
      * 把输入的金额转换为汉语中人民币的大写
-     * 
+     *
      * @param numberOfMoney
      *            输入的金额
      * @return 对应的汉语大写
@@ -87,9 +87,12 @@ public class NumberToCN {
                 zeroSize = 0;
             } else {
                 ++zeroSize;
-                if (!(getZero)) {
+                if (!(getZero) && numIndex != 2) { // 个位是0的时候，不添加零
                     sb.insert(0, CN_UPPER_NUMBER[numUnit]);
                 }
+                /*if (!(getZero)) {
+                    sb.insert(0, CN_UPPER_NUMBER[numUnit]);
+                }*/
                 if (numIndex == 2) {
                     if (number > 0) {
                         sb.insert(0, CN_UPPER_MONETRAY_UNIT[numIndex]);
@@ -115,7 +118,8 @@ public class NumberToCN {
     }
 
     public static void main(String[] args) {
-        double money = 2020004.0099999999;
+//        double money = 2020004.0099999999;
+        double money = 1981074.26;
         BigDecimal numberOfMoney = new BigDecimal(money);
         String s = NumberToCN.number2CNMontrayUnit(numberOfMoney);
         System.out.println("你输入的金额为：【"+ money +"】   #--# [" +s.toString()+"]");

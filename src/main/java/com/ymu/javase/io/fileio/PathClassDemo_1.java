@@ -3,7 +3,10 @@ package com.ymu.javase.io.fileio;
 import org.junit.Test;
 
 import java.io.File;
+import java.net.MalformedURLException;
 import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
@@ -11,7 +14,6 @@ import java.nio.file.Paths;
 
 //Path类
 public class PathClassDemo_1 {
-
     @Test
     public void creatPath() {
         Path p1 = Paths.get("/tmp/foo");

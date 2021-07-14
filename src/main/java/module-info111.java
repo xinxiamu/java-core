@@ -1,3 +1,4 @@
+/*
 module java.core {
     requires minio;
     requires junit;
@@ -9,6 +10,8 @@ module java.core {
     requires okhttp3;
     requires zip4j;
     requires org.apache.commons.lang3;
+    requires poi;
+    requires jfreechart;
     exports com.ymu.javase.datetime;
     exports com.ymu.javase.io.stream;
     exports com.ymu.javase.thread;
@@ -17,3 +20,4 @@ module java.core {
     exports com.ymu.study.okhttp;
     exports com.ymu.study.zip4j;
 }
+*/

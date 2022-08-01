@@ -15,5 +15,8 @@
 
     <modules>
         <module>apache-io</module>
+        <module>commons-collections</module>
+        <module>commons-codec</module>
+        <module>commons-chain</module>
     </modules>
 </project>

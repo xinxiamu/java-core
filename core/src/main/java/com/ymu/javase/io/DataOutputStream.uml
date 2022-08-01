@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>java.io.DataOutputStream</OriginalElement>
+  <nodes>
+    <node x="72.25" y="160.0">java.io.OutputStream</node>
+    <node x="266.75" y="240.0">java.io.DataOutput</node>
+    <node x="148.25" y="320.0">java.io.DataOutputStream</node>
+    <node x="18.0" y="80.0">java.io.Closeable</node>
+    <node x="53.75" y="240.0">java.io.FilterOutputStream</node>
+    <node x="0.0" y="0.0">java.lang.AutoCloseable</node>
+    <node x="161.0" y="80.0">java.io.Flushable</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.io.OutputStream" target="java.io.Flushable" relationship="REALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="150.25" y="135.0" />
+      <point x="221.0" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.io.Closeable" target="java.lang.AutoCloseable" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.io.DataOutputStream" target="java.io.DataOutput" relationship="REALIZATION">
+      <point x="47.25" y="-15.0" />
+      <point x="290.0" y="295.0" />
+      <point x="335.25" y="295.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.io.OutputStream" target="java.io.Closeable" relationship="REALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="150.25" y="135.0" />
+      <point x="79.5" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.io.FilterOutputStream" target="java.io.OutputStream" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.io.DataOutputStream" target="java.io.FilterOutputStream" relationship="GENERALIZATION">
+      <point x="-47.25" y="-15.0" />
+      <point x="195.5" y="295.0" />
+      <point x="150.25" y="295.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="202.0" y="175.0" />
+  <SelectedNodes>
+    <node>java.io.FilterOutputStream</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

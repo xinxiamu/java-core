@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>java.io.DataInputStream</OriginalElement>
+  <nodes>
+    <node x="-55.0" y="117.0">java.io.DataInput</node>
+    <node x="-242.0" y="-117.0">java.lang.AutoCloseable</node>
+    <node x="-165.5" y="195.0">java.io.DataInputStream</node>
+    <node x="-233.5" y="39.0">java.io.InputStream</node>
+    <node x="-55.0" y="-66.5">java.io.Closeable</node>
+    <node x="-252.0" y="117.0">java.io.FilterInputStream</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.io.DataInputStream" target="java.io.DataInput" relationship="REALIZATION">
+      <point x="43.25" y="-14.0" />
+      <point x="-35.75" y="170.0" />
+      <point x="5.5" y="170.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="java.io.Closeable" target="java.lang.AutoCloseable" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="5.5" y="-103.0" />
+      <point x="78.5" y="0.0" />
+    </edge>
+    <edge source="java.io.FilterInputStream" target="java.io.InputStream" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="java.io.InputStream" target="java.io.Closeable" relationship="REALIZATION">
+      <point x="70.0" y="0.0" />
+      <point x="5.5" y="53.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="java.io.DataInputStream" target="java.io.FilterInputStream" relationship="GENERALIZATION">
+      <point x="-43.25" y="-14.0" />
+      <point x="-122.25" y="170.0" />
+      <point x="-163.5" y="170.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="352.33333333333326" y="241.74999999999997" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

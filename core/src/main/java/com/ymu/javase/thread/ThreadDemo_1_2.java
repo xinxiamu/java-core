@@ -81,6 +81,10 @@ public class ThreadDemo_1_2 {
 
     }
 
+    public void test01() {
+
+    }
+
     public static class MyThread extends Thread {
 
         @Override

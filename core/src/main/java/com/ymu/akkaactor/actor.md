@@ -1,5 +1,5 @@
-## ActorÄ£ÐÍ½éÉÜ
+## Actoræ¨¡åž‹ä»‹ç»
 
-[½éÉÜÁ´½Ó](https://cloud.tencent.com/developer/news/698662)
+[ä»‹ç»é“¾æŽ¥](https://cloud.tencent.com/developer/news/698662)
 
->ActorÄ£ÐÍ=Êý¾Ý+ÐÐÎª+ÏûÏ¢¡£
+>Actoræ¨¡åž‹=æ•°æ®+è¡Œä¸º+æ¶ˆæ¯ã€‚

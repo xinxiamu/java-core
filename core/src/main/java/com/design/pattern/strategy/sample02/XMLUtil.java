@@ -25,7 +25,9 @@ public class XMLUtil {
 
             //通过类名生成实例对象并将其返回
             Class c = Class.forName(cName);
-            Object obj = c.newInstance();
+//            Class c = Class.forName("com.design.pattern.strategy.sample02.QuickSort");
+//            Object obj = c.newInstance();
+            Object obj = c.getDeclaredConstructor().newInstance();
             return obj;
         } catch (Exception e) {
             e.printStackTrace();

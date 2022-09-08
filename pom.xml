@@ -13,24 +13,4 @@
 	<packaging>pom</packaging>
 	<name>java-core</name>
 
-	<properties>
-	</properties>
-
-	<!--<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.5.1</version>
-				&lt;!&ndash;<configuration>
-					<source>7</source>
-					<target>7</target>
-					&lt;!&ndash;<compilerArguments>
-						<extdirs>jni</extdirs>
-					</compilerArguments>&ndash;&gt;
-				</configuration>&ndash;&gt;
-			</plugin>
-		</plugins>
-	</build>-->
-
 </project>

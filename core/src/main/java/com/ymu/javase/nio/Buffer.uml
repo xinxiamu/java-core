@@ -3,29 +3,33 @@
   <ID>JAVA</ID>
   <OriginalElement>java.lang.Object</OriginalElement>
   <nodes>
-    <node x="852.0" y="142.0">java.nio.DoubleBuffer</node>
-    <node x="1018.0" y="142.0">java.nio.ShortBuffer</node>
-    <node x="577.5" y="-35.22083805209513">java.lang.Object</node>
-    <node x="130.0" y="142.0">java.nio.LongBuffer</node>
-    <node x="-86.5" y="192.5">java.nio.HeapByteBufferR</node>
-    <node x="703.0" y="142.0">java.nio.FloatBuffer</node>
-    <node x="580.5" y="64.0">java.nio.Buffer</node>
-    <node x="571.0" y="142.0">java.nio.IntBuffer</node>
-    <node x="425.0" y="142.0">java.nio.CharBuffer</node>
-    <node x="280.0" y="142.0">java.nio.ByteBuffer</node>
+    <node x="106.0" y="120.0">java.nio.ShortBuffer</node>
+    <node x="431.5" y="-36.0">java.lang.Object</node>
+    <node x="-39.0" y="120.0">java.nio.ByteBuffer</node>
+    <node x="434.5" y="42.0">java.nio.Buffer</node>
+    <node x="852.0" y="120.0">java.nio.LongBuffer</node>
+    <node x="706.0" y="120.0">java.nio.CharBuffer</node>
+    <node x="-70.0" y="198.0">java.nio.MappedByteBuffer</node>
+    <node x="259.0" y="120.0">java.nio.DoubleBuffer</node>
+    <node x="425.0" y="120.0">java.nio.IntBuffer</node>
+    <node x="557.0" y="120.0">java.nio.FloatBuffer</node>
   </nodes>
   <notes />
   <edges>
     <edge source="java.nio.ByteBuffer" target="java.nio.Buffer" relationship="GENERALIZATION">
       <point x="0.0" y="-14.0" />
-      <point x="342.5" y="117.0" />
-      <point x="627.0" y="117.0" />
+      <point x="23.5" y="95.0" />
+      <point x="481.0" y="95.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="java.nio.MappedByteBuffer" target="java.nio.ByteBuffer" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
       <point x="0.0" y="14.0" />
     </edge>
     <edge source="java.nio.CharBuffer" target="java.nio.Buffer" relationship="GENERALIZATION">
       <point x="0.0" y="-14.0" />
-      <point x="488.0" y="117.0" />
-      <point x="627.0" y="117.0" />
+      <point x="769.0" y="95.0" />
+      <point x="481.0" y="95.0" />
       <point x="0.0" y="14.0" />
     </edge>
     <edge source="java.nio.IntBuffer" target="java.nio.Buffer" relationship="GENERALIZATION">
@@ -34,41 +38,36 @@
     </edge>
     <edge source="java.nio.ShortBuffer" target="java.nio.Buffer" relationship="GENERALIZATION">
       <point x="0.0" y="-14.0" />
-      <point x="1084.5" y="117.0" />
-      <point x="627.0" y="117.0" />
+      <point x="172.5" y="95.0" />
+      <point x="481.0" y="95.0" />
       <point x="0.0" y="14.0" />
     </edge>
     <edge source="java.nio.DoubleBuffer" target="java.nio.Buffer" relationship="GENERALIZATION">
       <point x="0.0" y="-14.0" />
-      <point x="925.0" y="117.0" />
-      <point x="627.0" y="117.0" />
-      <point x="0.0" y="14.0" />
-    </edge>
-    <edge source="java.nio.FloatBuffer" target="java.nio.Buffer" relationship="GENERALIZATION">
-      <point x="0.0" y="-14.0" />
-      <point x="767.5" y="117.0" />
-      <point x="627.0" y="117.0" />
+      <point x="332.0" y="95.0" />
+      <point x="481.0" y="95.0" />
       <point x="0.0" y="14.0" />
     </edge>
     <edge source="java.nio.LongBuffer" target="java.nio.Buffer" relationship="GENERALIZATION">
       <point x="0.0" y="-14.0" />
-      <point x="195.0" y="117.0" />
-      <point x="627.0" y="117.0" />
+      <point x="917.0" y="95.0" />
+      <point x="481.0" y="95.0" />
       <point x="0.0" y="14.0" />
     </edge>
     <edge source="java.nio.Buffer" target="java.lang.Object" relationship="GENERALIZATION">
       <point x="0.0" y="-14.0" />
       <point x="0.0" y="14.0" />
     </edge>
-    <edge source="java.nio.HeapByteBufferR" target="java.nio.ByteBuffer" relationship="GENERALIZATION">
-      <point x="87.0" y="-0.0" />
-      <point x="342.5" y="206.5" />
-      <point x="-0.0" y="14.0" />
+    <edge source="java.nio.FloatBuffer" target="java.nio.Buffer" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="621.5" y="95.0" />
+      <point x="481.0" y="95.0" />
+      <point x="0.0" y="14.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic" zoom="0.8482228626320846" showDependencies="false" x="558.667610419026" y="302.5872027180068" />
+  <settings layout="Hierarchic" zoom="1.4057835820895523" showDependencies="false" x="364.0" y="105.23490378234902" />
   <SelectedNodes>
-    <node>java.nio.ByteBuffer</node>
+    <node>java.lang.Object</node>
   </SelectedNodes>
   <Categories />
   <SCOPE>All</SCOPE>

@@ -9,6 +9,7 @@
 		<module>apache-common</module>
 		<module>netty-study</module>
         <module>google-guava</module>
+		<module>javacv-ffmpeg</module>
     </modules>
 	<packaging>pom</packaging>
 	<name>java-core</name>

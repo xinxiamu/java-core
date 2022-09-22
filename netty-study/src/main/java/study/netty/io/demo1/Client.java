@@ -11,8 +11,6 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 
 /**
  * netty 客户端
- * @author lanx
- * @date 2022/3/20
  */
 public class Client {
 

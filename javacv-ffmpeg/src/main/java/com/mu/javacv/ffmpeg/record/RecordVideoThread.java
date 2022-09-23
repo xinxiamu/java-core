@@ -1,4 +1,4 @@
-package com.mu.javacv.ffmpeg;
+package com.mu.javacv.ffmpeg.record;
 
 import org.bytedeco.ffmpeg.global.avcodec;
 import org.bytedeco.javacv.*;
@@ -11,7 +11,8 @@ import java.io.IOException;
  **/
 public class RecordVideoThread implements Runnable {
 
-    private String stream_url = "rtmp://192.168.0.106/live/pigy";// 流地址 例如：rtmp://58.200.131.2:1935/livetv/hunantv 湖南卫视
+//    private String stream_url = "rtmp://192.168.0.106/live/123";// 流地址 例如：rtmp://58.200.131.2:1935/livetv/hunantv 湖南卫视
+    private String stream_url = "rtsp://192.168.0.114/live/mainstream";//
     private Long times_sec = 0L;// 停止录制时长 0为不限制时长
     private String out_file_path;//输出路径
     private String file_format = "mp4";//录制的文件格式
@@ -23,6 +24,7 @@ public class RecordVideoThread implements Runnable {
         FFmpegFrameGrabber grabber = new FFmpegFrameGrabber(stream_url);
         FFmpegFrameRecorder recorder = null;
         try {
+            FFmpegLogCallback.set();
             grabber.start();
             Frame frame = grabber.grabFrame();
             if (frame != null) {

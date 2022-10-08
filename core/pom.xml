@@ -130,14 +130,21 @@
 		<dependency>
 			<groupId>cn.hutool</groupId>
 			<artifactId>hutool-all</artifactId>
-			<version>5.7.3</version>
+			<version>5.8.8</version>
 		</dependency>
 
 		<!--反编译-->
 		<dependency>
 			<groupId>org.javassist</groupId>
 			<artifactId>javassist</artifactId>
-			<version>3.27.0-GA</version>
+			<version>3.29.2-GA</version>
+		</dependency>
+
+		<!--动态代理库-->
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>3.3.0</version>
 		</dependency>
 
 		<!--用来生成证书-->

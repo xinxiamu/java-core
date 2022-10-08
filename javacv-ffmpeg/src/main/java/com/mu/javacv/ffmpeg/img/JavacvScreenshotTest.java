@@ -46,6 +46,7 @@ public class JavacvScreenshotTest {
 
     }
 
+    //抓取某个时间段中的图片
     @Test
     public void test2() throws IOException {
         File file = new File("E:\\bb.png");

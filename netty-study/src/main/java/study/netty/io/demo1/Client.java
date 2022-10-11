@@ -32,7 +32,8 @@ public class Client {
                     }
                 });
         ChannelFuture cf = b.connect("192.168.0.104",56666).syncUninterruptibly();
-        String clientMsg = "netty client request data-";
+//        String clientMsg = "netty client request data-";
+        String clientMsg = ">$pro,m4*E975";
         cf.channel().writeAndFlush(Unpooled.copiedBuffer(clientMsg.getBytes()));
         //释放连接
         cf.channel().closeFuture().sync();

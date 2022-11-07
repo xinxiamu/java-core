@@ -1,4 +1,4 @@
-package study.netty.io.demo1;
+package study.netty.io.retry.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -8,6 +8,7 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import study.netty.io.retry.Constants;
 
 public class Server {
 
@@ -30,15 +31,15 @@ public class Server {
                     @Override
                     protected void initChannel(SocketChannel sc) throws Exception {
                         //为通道进行初始化：数据传输过来的时候会进行拦截和执行 (可以有多个拦截器)
-                        sc.pipeline().addLast(new ServerHandler());
+                        sc.pipeline().addLast(new ServerPoHandlerProto());
                     }
                 });
-        ChannelFuture cf = b.bind(56667).sync();
+        ChannelFuture cf = b.bind(Constants.PORT).sync();
 
         //释放连接
-        cf.channel().closeFuture().sync();
-        workerGroup.shutdownGracefully();
-        bossGroup.shutdownGracefully();
+//        cf.channel().closeFuture().sync();
+//        workerGroup.shutdownGracefully();
+//        bossGroup.shutdownGracefully();
 
     }
 }

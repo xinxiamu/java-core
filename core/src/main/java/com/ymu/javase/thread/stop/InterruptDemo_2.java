@@ -72,9 +72,11 @@ public class InterruptDemo_2 {
 
     public static class MyThread extends Thread {
 
+        private int i;
+
         @Override
         public void run() {
-            for (int i = 0; i < 500000; i++) {
+            for (int i = 0; i < 5000; i++) {
                 System.out.println(this.getName() + ":i=" + (i + 1));
             }
         }

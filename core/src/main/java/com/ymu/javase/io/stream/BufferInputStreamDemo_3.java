@@ -10,13 +10,24 @@ public class BufferInputStreamDemo_3 {
 
     }
 
+    //逐行读取文件
+    @Test
+    public void test1() throws IOException {
+        InputStream inputStream = new FileInputStream("data.txt");
+        InputStreamReader reader = new InputStreamReader(inputStream);
+        BufferedReader br = new BufferedReader(reader);
+        while (br.readLine() != null) {
+            System.out.println(br.readLine());
+        }
+    }
+
     //看代码，似乎是和readlimit参数有关。但是仔细查看相关代码，可知，BufferedInputStream默认开8k的缓冲区，如果你在开始就mark，那么理论上最长可以read 8k数据，还可以成功reset回来。
     //
     //  InputStream方法里关于mark的文档，仅仅是一个最低实现要求。也就是说，如果支持mark,那么当你读取不超过readlimit个字节时，reset必须还原至mark的点。但是如果你有能力缓冲更多，则没有要求，也就是说，并没有强制要求读取超过readlimit时必须失效
     @Test
     public void testMarkAndReset0() throws IOException {
         try {
-            BufferedInputStream bis = new BufferedInputStream(new FileInputStream("aa.txt"));
+            BufferedInputStream bis = new BufferedInputStream(new FileInputStream("data.txt"));
             System.out.println((char) bis.read());
             System.out.println((char) bis.read());
             bis.mark(3);//在第三个字符打标签，读取六个字符之内标签有效。
@@ -70,7 +81,7 @@ public class BufferInputStreamDemo_3 {
     @Test
     public void testMarkAndReset() throws IOException {
         BufferInputStreamDemo_3 test = new BufferInputStreamDemo_3();
-        String fileName = "xanadu.txt";
+        String fileName = "data.txt";
         InputStream in1 = new FileInputStream(new File(fileName));
         if (!in1.markSupported()) {
             in1 = new BufferedInputStream(in1);//FileInputStream不支持mark()和reset()方法，所以要包装到BufferedInputStream中

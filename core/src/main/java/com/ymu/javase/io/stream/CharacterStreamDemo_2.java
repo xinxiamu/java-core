@@ -16,11 +16,12 @@ public class CharacterStreamDemo_2 {
         FileWriter outputStream = null;
 
         try {
-            inputStream = new FileReader("xanadu.txt");
+            inputStream = new FileReader("data.txt");
             outputStream = new FileWriter("characteroutput.txt");
 
             int c;
             while ((c = inputStream.read()) != -1) {
+                System.out.println(">>>::::" + c);
                 outputStream.write(c);
             }
         } finally {

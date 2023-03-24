@@ -8,8 +8,10 @@
 		<module>core</module>
 		<module>apache-common</module>
 		<module>netty-study</module>
+		<module>rsocket-study</module>
         <module>google-guava</module>
 		<module>javacv-ffmpeg</module>
+        <module>core17</module>
     </modules>
 	<packaging>pom</packaging>
 	<name>java-core</name>

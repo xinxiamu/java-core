@@ -11,7 +11,7 @@ public class HumanFactory {
         try {
             human = (Human) Class.forName(clazz.getName()).getDeclaredConstructor().newInstance(); //产生一种人类
         } catch (InstantiationException e) {
-
+            e.printStackTrace();
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         } catch (NoSuchMethodException e) {

@@ -1,5 +1,9 @@
 package com.ymu.javase.thread;
 
+import com.alibaba.fastjson.JSON;
+
+import java.io.Serializable;
+
 /**
  * sleep()方法是在指定的毫秒数内让当前”正在执行的线程“休眠（暂停执行）。”正在执行的线程“是指this.currentThread()返回的线程。
  */

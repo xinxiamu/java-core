@@ -4,6 +4,10 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
 public class DynamicProxy implements InvocationHandler {
+
+    /**
+     * 被代理对象
+     */
     private Object obj;
 
     public DynamicProxy() {
@@ -13,6 +17,7 @@ public class DynamicProxy implements InvocationHandler {
         this.obj = obj;
     }
 
+    @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         preRequest();
         method.invoke(obj, args);

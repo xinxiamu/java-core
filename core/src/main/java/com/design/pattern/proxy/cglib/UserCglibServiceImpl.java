@@ -10,6 +10,7 @@ public class UserCglibServiceImpl implements UserServiceCglib {
         System.out.println("cglib动态代理...正在注册用户，用户信息为：" + user);
     }*/
 
+    @Override
     public void addUser(User user) {
         System.out.println("cglib动态代理...正在注册用户，用户信息为：" + user);
     }

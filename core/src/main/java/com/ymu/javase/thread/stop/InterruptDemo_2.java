@@ -10,7 +10,7 @@ public class InterruptDemo_2 {
 
     public static void main(String[] args) {
         //调用了interrupt()方法，但是并没有真正终止线程
-        /*try {
+       /* try {
             MyThread myThread = new MyThread();
             myThread.setName("myThread");
             myThread.start();
@@ -57,7 +57,7 @@ public class InterruptDemo_2 {
             MyThread myThread = new MyThread();
             myThread.setName("myThread");
             myThread.start();
-//            Thread.sleep(5000);
+            //Thread.sleep(5000);
             myThread.interrupt();
             System.out.println("是否停止 1？=====================" + myThread.isInterrupted());
             System.out.println("是否停止 2？=====================" + myThread.isInterrupted());
@@ -76,7 +76,7 @@ public class InterruptDemo_2 {
 
         @Override
         public void run() {
-            for (int i = 0; i < 5000; i++) {
+            for (int i = 0; i < 50000; i++) {
                 System.out.println(this.getName() + ":i=" + (i + 1));
             }
         }

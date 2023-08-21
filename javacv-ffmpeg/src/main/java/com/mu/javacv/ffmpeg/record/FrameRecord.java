@@ -8,9 +8,26 @@ import org.bytedeco.javacv.FrameGrabber;
 public class FrameRecord {
 
     public static void main(String[] args) throws FrameGrabber.Exception, FFmpegFrameRecorder.Exception {
-        String inputFile = "rtsp://192.168.0.114/live/mainstream";
-        String outputFile = "E:\\rr.mp4";
-        frameRecord(inputFile, outputFile, 1);
+        /*new Runnable() {
+            @Override
+            public void run() {
+                String inputFile = "rtsp://192.168.0.103/live/mainstream";
+                String outputFile = "E:\\rr.mp4";
+                try {
+                    frameRecord(inputFile, outputFile, 1);
+                } catch (FrameGrabber.Exception e) {
+                    throw new RuntimeException(e);
+                } catch (FFmpegFrameRecorder.Exception e) {
+                    throw new RuntimeException(e);
+                }
+
+            }
+        }.run();*/
+
+        String a = "202201/220101083045/1#220101/P02.jpg";
+        System.out.println();
+        int i = Integer.parseInt("P42".substring(1));
+        System.out.println(String.format("%02d", i + 1));
     }
 
     public static void frameRecord(String inputFile, String outputFile, int audioChannel) throws FrameGrabber.Exception, FFmpegFrameRecorder.Exception {

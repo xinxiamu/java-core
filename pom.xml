@@ -11,9 +11,13 @@
 		<module>rsocket-study</module>
         <module>google-guava</module>
 		<module>javacv-ffmpeg</module>
-        <module>core17</module>
+        <module>core-new</module>
     </modules>
 	<packaging>pom</packaging>
 	<name>java-core</name>
+
+	<properties>
+		<java.version>17</java.version>
+	</properties>
 
 </project>

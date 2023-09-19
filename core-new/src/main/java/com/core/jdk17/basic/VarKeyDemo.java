@@ -1,9 +1,5 @@
 package com.core.jdk17.basic;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.List;
 
 //演示关键字var使用

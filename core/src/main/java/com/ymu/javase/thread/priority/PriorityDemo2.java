@@ -18,7 +18,7 @@ public class PriorityDemo2 {
         @Override
         public void run() {
             long beginTime = System.currentTimeMillis();
-            long sum = 0l;
+            long sum = 0L;
             for (int i = 0; i < 10; i++) {
                 for (int j = 0; j < 10000; j++) {
                     Random random = new Random();

@@ -25,7 +25,7 @@ class A {
         }
     }
 
-    //静态同步方法
+    //静态同步方法。对整个类加锁
     //在静态方法前使用 synchronized 关键字，将锁定类的类对象，以确保同一时刻只有一个线程可以访问该静态方法。其他线程在尝试访问同步方法时将被阻塞。
     public static synchronized void aa() {
         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>静态同步方法=" + Thread.currentThread().getName());
@@ -103,3 +103,53 @@ class BThread extends Thread {
        a.a();
     }
 }
+
+/**
+ * 作为同步块使用。
+ * 在这个示例中，lock 对象用作同步块的锁对象，以确保 increment() 和 getCounter() 方法的线程安全。这可以防止两个线程同时访问 sharedCounter，从而保证了数据一致性。
+ */
+class SynchronizedBlockExample {
+    private int sharedCounter = 0;
+    private final Object lock = new Object(); // 锁对象
+
+    public void increment() {
+        synchronized (lock) { // 同步块，锁定lock对象
+            sharedCounter++;
+        }
+    }
+
+    public int getCounter() {
+        synchronized (lock) { // 同步块，锁定lock对象
+            return sharedCounter;
+        }
+    }
+
+    public static void main(String[] args) {
+        SynchronizedBlockExample example = new SynchronizedBlockExample();
+
+        Thread thread1 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                example.increment();
+            }
+        });
+
+        Thread thread2 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                example.increment();
+            }
+        });
+
+        thread1.start();
+        thread2.start();
+
+        try {
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        System.out.println("Final counter value: " + example.getCounter());
+    }
+}
+

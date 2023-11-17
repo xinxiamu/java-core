@@ -98,3 +98,41 @@ class AtomicIntegerExample {
         //System.out.println("Final count value: " + example.count);
     }
 }
+
+//如何终止死循环代码
+class DealEachFor implements Runnable {
+
+//    private boolean flag = true;
+    private volatile boolean flag = true; //解决办法，添加关键字volatile
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
+
+    public void println() {
+        try {
+            while (flag) {
+                System.out.println(">>>>>>>>死循环输出");
+                Thread.sleep(1000);
+            }
+            System.out.println(">>>>循环输出成功停止啦");
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    @Override
+    public void run() {
+        println();
+    }
+}
+
+class TestDealEachFor {
+    public static void main(String[] args) throws InterruptedException {
+        DealEachFor dealsEachFor = new DealEachFor();
+        Thread t = new Thread(dealsEachFor);
+        t.start();
+        Thread.sleep(5000);
+        dealsEachFor.setFlag(false);
+    }
+}

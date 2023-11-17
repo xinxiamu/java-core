@@ -153,3 +153,66 @@ class SynchronizedBlockExample {
     }
 }
 
+//这是一个死锁线程
+//死锁原因：互相持有对方锁，并等待彼此释放。所以要避免这种情况，才能避免出现死锁
+class DealThread implements Runnable {
+    public String username;
+    //设置两个对象锁
+    public final Object lock1 = new Object();
+    public final Object lock2 = new Object();
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    @Override
+    public void run() {
+        if ("zmt".equals(username)) {
+            synchronized (lock1) {
+                try {
+                    System.out.println(">>>>a username = " + username);
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+
+                synchronized (lock2) {
+                    System.out.println("按顺序执行，lock1->lock2");
+                }
+            }
+        } else {
+            synchronized (lock2) {
+                try {
+                    System.out.println(">>>>a username = " + username);
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+
+                synchronized (lock1) {
+                    System.out.println("按顺序执行，lock2->lock1");
+                }
+            }
+        }
+    }
+}
+
+//查看死锁方法：
+//使用JDK自带工具
+//再JDK安装目录的bin目录下，命令行执行：jps
+//得到TestDealThread的id
+//命令行再执行：jstack -l id
+class TestDealThread {
+    public static void main(String[] args) throws InterruptedException {
+        DealThread t1 = new DealThread();
+        t1.setUsername("zmt");
+        Thread thread1 = new Thread(t1);
+        thread1.start();
+        Thread.sleep(1000);
+
+        t1.setUsername("hyy");
+        Thread dealThread2 = new Thread(t1);
+        dealThread2.start();
+    }
+}
+

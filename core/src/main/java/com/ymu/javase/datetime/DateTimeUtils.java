@@ -32,6 +32,21 @@ public final class DateTimeUtils {
 	}
 
 	/**
+	 * 打印代码执行时间
+	 * @param startTime 开始时间
+	 * @param endTime 结束时间
+	 */
+	private static void logExecutionTime(Instant startTime, Instant endTime) {
+		Duration duration = Duration.between(startTime, endTime);
+		long seconds = duration.getSeconds();
+		long millis = duration.toMillis();
+
+		System.out.printf("Code execution started at: %s%n", startTime);
+		System.out.printf("Code execution finished at: %s%n", endTime);
+		System.out.printf("Total execution time: %s%n seconds, %s%n milliseconds", seconds, millis);
+	}
+
+	/**
 	 * 返回date所在周的星期一时间对象。
 	 * @param date 如果date为null，则代表当前日期。
 	 * @return 所在周周一对象。
@@ -41,9 +56,7 @@ public final class DateTimeUtils {
 			date = LocalDate.now();
 		}
 
-		LocalDate firstDayOfWeek = date.plusDays(-(date.getDayOfWeek().getValue()) + 1);
-
-		return firstDayOfWeek;
+		return date.plusDays(-(date.getDayOfWeek().getValue()) + 1);
 	}
 
 	public static LocalDate getFirstDayOfWeek(String dateStr, FormatterStyle formatterStyle) {
@@ -54,9 +67,7 @@ public final class DateTimeUtils {
 			date = strToLocalDate(dateStr, formatterStyle);
 		}
 
-		LocalDate firstDayOfWeek = date.plusDays(-(date.getDayOfWeek().getValue()) + 1);
-
-		return firstDayOfWeek;
+		return date.plusDays(-(date.getDayOfWeek().getValue()) + 1);
 	}
 
 	/**
@@ -69,9 +80,7 @@ public final class DateTimeUtils {
 			date = LocalDate.now();
 		}
 
-		LocalDate wkEndDate = date.plusDays(7 - date.getDayOfWeek().getValue());
-
-		return wkEndDate;
+		return date.plusDays(7 - date.getDayOfWeek().getValue());
 	}
 
 	public static LocalDate getEndDayOfWeek(String dateStr, FormatterStyle formatterStyle) {
@@ -82,9 +91,7 @@ public final class DateTimeUtils {
 			date = strToLocalDate(dateStr, formatterStyle);
 		}
 
-		LocalDate wkEndDate = date.plusDays(7 - date.getDayOfWeek().getValue());
-
-		return wkEndDate;
+		return date.plusDays(7 - date.getDayOfWeek().getValue());
 	}
 
 	/**
@@ -94,8 +101,7 @@ public final class DateTimeUtils {
 	 */
 	public static int getWeekOfYear(LocalDate localDate) {
 		WeekFields weekFields = WeekFields.of(DayOfWeek.MONDAY,1);
-		int weekOfYear = localDate.get(weekFields.weekOfYear());
-		return weekOfYear;
+		return localDate.get(weekFields.weekOfYear());
 	}
 
 	/**
@@ -106,8 +112,7 @@ public final class DateTimeUtils {
 	 */
 	public static LocalDate strToLocalDate(String dateStr, FormatterStyle formatterStyle) {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(formatterStyle.getValue());
-		LocalDate ldt = LocalDate.parse(dateStr, formatter);
-		return ldt;
+		return LocalDate.parse(dateStr, formatter);
 	}
 
 	/**
@@ -128,8 +133,7 @@ public final class DateTimeUtils {
 	public static String now() {
 		LocalDateTime localDateTime = LocalDateTime.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM);
-		String formatStr = formatter.format(localDateTime);
-		return formatStr;
+		return formatter.format(localDateTime);
 	}
 
 	/**
@@ -140,8 +144,7 @@ public final class DateTimeUtils {
 	public static String now(FormatterStyle formatterStyle) {
 		LocalDateTime localDateTime = LocalDateTime.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(formatterStyle.getValue());
-		String str = formatter.format(localDateTime);
-		return str;
+		return formatter.format(localDateTime);
 	}
 
 	/**
@@ -164,8 +167,7 @@ public final class DateTimeUtils {
 	public static long diff(Instant startTime, Instant endTime) {
 		//表示两个瞬时点之间的时间量
 		Duration timElapsed = Duration.between(startTime, endTime);
-		long millis = timElapsed.toMillis();//毫秒表示
-		return millis; 
+		return timElapsed.toMillis();
 	}
 
 	public static void main(String[] args) {

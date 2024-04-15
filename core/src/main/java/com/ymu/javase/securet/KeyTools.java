@@ -58,5 +58,7 @@ public final class KeyTools {
 
     public static void main(String[] args) {
         System.out.println(generateSalt(16));
+
+        System.out.println(generateKey("AES", 128));
     }
 }

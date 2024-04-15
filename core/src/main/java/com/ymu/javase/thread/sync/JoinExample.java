@@ -41,7 +41,7 @@ class JoinExample1 {
         Thread workerThread1 = new Thread(() -> {
             System.out.println(">>>>>工作线程1开始工作");
             try {
-                Thread.sleep(1000);
+                Thread.sleep(3000);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
@@ -51,7 +51,7 @@ class JoinExample1 {
         Thread workerThread2 = new Thread(() -> {
             System.out.println(">>>>>工作线程2开始工作");
             try {
-                Thread.sleep(5000);
+                Thread.sleep(6000);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
@@ -65,6 +65,7 @@ class JoinExample1 {
         try {
             System.out.println(">>>>>这里等待工作线程结束");
             workerThread2.join(); //等待工作线程结束，同步效果
+            System.out.println("==========工作线程2结束，1还么结束");
             workerThread1.join(); //等待工作线程结束，同步效果
             System.out.println(">>>>>>工作线程结束，回到了主线程了");
         } catch (InterruptedException e) {

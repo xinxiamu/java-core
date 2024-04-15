@@ -12,6 +12,7 @@
         <module>google-guava</module>
 		<module>javacv-ffmpeg</module>
         <module>core-new</module>
+        <module>okhttp-show</module>
     </modules>
 	<packaging>pom</packaging>
 	<name>java-core</name>

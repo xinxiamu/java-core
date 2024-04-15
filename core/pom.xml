@@ -194,7 +194,32 @@
 					</compilerArguments>-->
 				</configuration>
 			</plugin>
+			<!-- exec-maven-plugin 插件配置 -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>HelloWorld</mainClass>
+					<!-- 其他配置 -->
+				</configuration>
+			</plugin>
 		</plugins>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+			<!-- 其他资源配置 -->
+		</resources>
 	</build>
 
 </project>

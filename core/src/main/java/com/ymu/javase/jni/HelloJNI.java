@@ -5,7 +5,7 @@ public class HelloJNI {
     static {
         // hello.dll (Windows) or libhello.so (Unixes)
 //        System.load(""); //加载的全路径文件名
-        System.loadLibrary("jni/hello");
+        System.loadLibrary("jni/hello.dll");
     }
 
     private native void sayHello();

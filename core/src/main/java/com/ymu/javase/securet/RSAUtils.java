@@ -149,7 +149,7 @@ public class RSAUtils {
     //-------------------- 数字签名：私钥签名，公钥验证 ---------------------------//
 
     /**
-     * 私钥签名。MD5withRSA方式，其他的百度参考。
+     * 私钥签名。SHA256withRSA方式，其他的百度参考。
      * @param priKeyBase64 私钥，base64编码。
      * @param src	要签名的内容
      * @return	base64编码返回签名。
@@ -159,7 +159,8 @@ public class RSAUtils {
             PKCS8EncodedKeySpec pkcs8EncodedKeySpec = new PKCS8EncodedKeySpec(Base64.decodeBase64(priKeyBase64));
             KeyFactory keyFactory = KeyFactory.getInstance("RSA");
             PrivateKey privateKey = keyFactory.generatePrivate(pkcs8EncodedKeySpec);
-            Signature signature = Signature.getInstance("MD5withRSA");
+//            Signature signature = Signature.getInstance("MD5withRSA");
+            Signature signature = Signature.getInstance("SHA256withRSA");
             signature.initSign(privateKey);
             signature.update(src.getBytes());
             byte[] result = signature.sign();
@@ -173,7 +174,7 @@ public class RSAUtils {
     }
 
     /**
-     * 公钥验证。MD5withRSA方式，其他的百度参考。
+     * 公钥验证。SHA256withRSA方式，其他的百度参考。
      * @param pubKeyBase64	公钥，base64编码。
      * @param src	原签名内容
      * @param signBase64	签名。base64编码。
@@ -185,7 +186,8 @@ public class RSAUtils {
             X509EncodedKeySpec x509EncodedKeySpec = new X509EncodedKeySpec(Base64.decodeBase64(pubKeyBase64));
             KeyFactory keyFactory = KeyFactory.getInstance("RSA");
             PublicKey publicKey = keyFactory.generatePublic(x509EncodedKeySpec);
-            Signature signature = Signature.getInstance("MD5withRSA");
+//            Signature signature = Signature.getInstance("MD5withRSA");
+            Signature signature = Signature.getInstance("SHA256withRSA");
             signature.initVerify(publicKey);
             signature.update(src.getBytes());
             boolean bool = signature.verify(Base64.decodeBase64(signBase64));
